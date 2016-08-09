@@ -1,6 +1,6 @@
 #!/bin/sh
-# TMRunner (build : 1)
-BUILD=1
+# TMRunner (build : 2)
+BUILD=2
 
 function showHelpMessage(){
 	echo "TMRunner (build : ${BUILD})"
@@ -11,11 +11,11 @@ function showHelpMessage(){
 
 function checkVolumeMounted(){
 	if [[ -d "/Volumes/OS X Install ESD" ]]; then
-		echo "Please unmount '/Volumes/OS X Install ESD' before do this."
+		echo "Please unmount '/Volumes/OS X Install ESD' before doing this."
 		MOUNT_ERROR=YES
 	fi
 	if [[ -d "/Volumes/OS X Base System" ]]; then
-		echo "Please unmount '/Volumes/OS X Base System' before do this."
+		echo "Please unmount '/Volumes/OS X Base System' before doing this."
 		MOUNT_ERROR=YES
 	fi
 	if [[ ${MOUNT_ERROR} == YES ]]; then
