@@ -7,4 +7,4 @@ Usage : `./TMRunner.sh --applicationpath [Path of Installer.app]`
 
 or want to process quickly (skip checksum check)
 
-'./TMRunner.sh --applicationpath [Path of Installer.app] -noverify'
+`./TMRunner.sh --applicationpath [Path of Installer.app] -noverify`
