@@ -1,11 +1,11 @@
 #!/bin/sh
-# TMRunner (build : 2)
-BUILD=2
+# TMRunner (build : 3)
+BUILD=3
 
 function showHelpMessage(){
 	echo "TMRunner (build : ${BUILD})"
 	echo "./TMRunner.sh [option]"
-	echo "--applicationpath [path] : Run Restore Time Machine App from macOS Installer."
+	echo "--applicationpath [path] : Run Time Machine Restore App from macOS Installer."
 	echo "example : ./TMRunner.sh --applicationpath /path/to/app"
 }
 
@@ -33,7 +33,7 @@ if [[ "${1}" == "--applicationpath" ]]; then
 		exit 1
 	fi
 	checkVolumeMounted
-	if [[ "${3}" == "-noverify" ]]; then
+	if [[ "${3}" == "-noverify" || $"{4}" == "-noverify" ]]; then
 		hdiutil attach "${2}/Contents/SharedSupport/InstallESD.dmg" -noverify
 	else
 		hdiutil attach "${2}/Contents/SharedSupport/InstallESD.dmg"
@@ -43,7 +43,7 @@ if [[ "${1}" == "--applicationpath" ]]; then
 		echo "ERROR!"
 		exit 1
 	fi
-	if [[ "${3}" == "-noverify" ]]; then
+	if [[ "${3}" == "-noverify" || $"{4}" == "-noverify" ]]; then
 		hdiutil attach "/Volumes/OS X Install ESD/BaseSystem.dmg" -noverify
 	else
 		hdiutil attach "/Volumes/OS X Install ESD/BaseSystem.dmg"
@@ -52,6 +52,9 @@ if [[ "${1}" == "--applicationpath" ]]; then
 		echo "/Volumes/OS X Base System/System/Installation/CDIS/Time Machine System Restore.app/Contents/MacOS/Time Machine System Restore: No such file or directory"
 		echo "ERROR!"
 		exit 1
+	fi
+	if [[ "${3}" == "-showFinder" || "${4}" == "-showFinder" ]]; then
+		open "/Volumes/OS X Base System/System/Installation/CDIS"
 	fi
 	"/Volumes/OS X Base System/System/Installation/CDIS/Time Machine System Restore.app/Contents/MacOS/Time Machine System Restore"
 	exit 0
