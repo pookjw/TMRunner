@@ -1,6 +1,6 @@
 #!/bin/sh
-# TMRunner (build : 3)
-BUILD=3
+# TMRunner (build : 4)
+BUILD=4
 
 function showHelpMessage(){
 	echo "TMRunner (build : ${BUILD})"
@@ -33,7 +33,7 @@ if [[ "${1}" == "--applicationpath" ]]; then
 		exit 1
 	fi
 	checkVolumeMounted
-	if [[ "${3}" == "-noverify" || $"{4}" == "-noverify" ]]; then
+	if [[ "${3}" == "-noverify" || "${4}" == "-noverify" ]]; then
 		hdiutil attach "${2}/Contents/SharedSupport/InstallESD.dmg" -noverify
 	else
 		hdiutil attach "${2}/Contents/SharedSupport/InstallESD.dmg"
@@ -43,7 +43,7 @@ if [[ "${1}" == "--applicationpath" ]]; then
 		echo "ERROR!"
 		exit 1
 	fi
-	if [[ "${3}" == "-noverify" || $"{4}" == "-noverify" ]]; then
+	if [[ "${3}" == "-noverify" || "${4}" == "-noverify" ]]; then
 		hdiutil attach "/Volumes/OS X Install ESD/BaseSystem.dmg" -noverify
 	else
 		hdiutil attach "/Volumes/OS X Install ESD/BaseSystem.dmg"
