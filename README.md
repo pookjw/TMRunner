@@ -1,4 +1,4 @@
-![Image](https://farm9.staticflickr.com/8204/28889087645_4b6d125a05_o.png)
+![Image](https://farm9.staticflickr.com/8729/28858045186_7e6ee00907_o.png)
 
 # TMRunner
 Run Restore Time Machine App from non-Recovery macOS.
