@@ -5,6 +5,6 @@ Run Restore Time Machine App from non-Recovery macOS.
 
 Usage : `./TMRunner.sh --applicationpath [Path of Installer.app]`
 
-of want to process quickly (skip checksum check)
+or want to process quickly (skip checksum check)
 
 './TMRunner.sh --applicationpath [Path of Installer.app] -noverify'
