@@ -1,11 +1,11 @@
 #!/bin/sh
-# TMRunner (build : 4)
+# TMRunner (build : 5)
 BUILD=4
 
 function showHelpMessage(){
 	echo "TMRunner (build : ${BUILD})"
-	echo "./TMRunner.sh [option]"
-	echo "--applicationpath [path] : Run Time Machine Restore App from macOS Installer."
+	echo ""
+	echo "./TMRunner.sh --applicationpath [path]"
 	echo "example : ./TMRunner.sh --applicationpath /path/to/app"
 }
 
@@ -56,7 +56,7 @@ if [[ "${1}" == "--applicationpath" ]]; then
 	if [[ "${3}" == "-showFinder" || "${4}" == "-showFinder" ]]; then
 		open "/Volumes/OS X Base System/System/Installation/CDIS"
 	fi
-	"/Volumes/OS X Base System/System/Installation/CDIS/Time Machine System Restore.app/Contents/MacOS/Time Machine System Restore"
+	sudo "/Volumes/OS X Base System/System/Installation/CDIS/Time Machine System Restore.app/Contents/MacOS/Time Machine System Restore"
 	exit 0
 else
 	showHelpMessage
