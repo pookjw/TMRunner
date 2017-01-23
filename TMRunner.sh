@@ -1,6 +1,6 @@
 #!/bin/sh
-# TMRunner (build : 5)
-BUILD=4
+# TMRunner (build : 6)
+BUILD=6
 
 function showHelpMessage(){
 	echo "TMRunner (build : ${BUILD})"
